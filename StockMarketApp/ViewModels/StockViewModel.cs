@@ -20,12 +20,12 @@ namespace StockMarketApp.ViewModels
 
             Stocks = new ObservableCollection<Stock>()
             {
-                new Stock(1, "Google", "GOOG", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "USD"),
-                new Stock(2, "Apple", "AAPL", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00), randomiser(random, 0000.00, 1000.00),  "USD"),
-                new Stock(3, "Microsoft", "MSFT", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00), randomiser(random, 0000.00, 1000.00),  "USD"),
-                new Stock(4, "Suziki", "SUZI", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "JPY"),
-                new Stock(5, "Rolls Royce", "ROLL", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "GBP"),
-                new Stock(6, "Attock Petrol", "ATTO", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "PKR"),
+                new Stock(1, "Google", "GOOG", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "USD", randomiser(random, -5.00, 5.00), (int)randomiser(random, 0, 250000), new DateTime(), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00)),
+                new Stock(2, "Apple", "AAPL", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00), randomiser(random, 0000.00, 1000.00),  "USD", randomiser(random, -5.00, 5.00), (int)randomiser(random, 0, 250000), new DateTime(), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00)),
+                new Stock(3, "Microsoft", "MSFT", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00), randomiser(random, 0000.00, 1000.00),  "USD", randomiser(random, -5.00, 5.00), (int)randomiser(random, 0, 250000), new DateTime(), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00)),
+                new Stock(4, "Suziki", "SUZI", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "JPY", randomiser(random, -5.00, 5.00), (int)randomiser(random, 0, 250000), new DateTime(), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00)),
+                new Stock(5, "Rolls Royce", "ROLL", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "GBP", randomiser(random, -5.00, 5.00), (int)randomiser(random, 0, 250000), new DateTime(), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00)),
+                new Stock(6, "Attock Petrol", "ATTO", randomiser(random, 1000.00, 2500.00), randomiser(random, 1500.00, 2500.00),  randomiser(random, 0000.00, 1000.00),  "PKR", randomiser(random, -5.00, 5.00), (int)randomiser(random, 0, 25000), new DateTime(), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00), randomiser(random, -25.00, 25.00)),
             };
         }
 
