@@ -39,5 +39,22 @@ namespace StockMarketApp
             binder.CloseDbConnectioner();
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var initials = searchStockTbox.Text;
+
+            var stock = from stocks in stockViewModel.Stocks
+                        select stocks.MarketIdentifier;
+
+            if (stock.Contains(initials))
+            {
+                MessageBox.Show("Found a stock");
+            } 
+            else
+            {
+                MessageBox.Show("Could not find stock identifier");
+            }
+
+        }
     }
 }
