@@ -42,19 +42,55 @@ namespace StockMarketApp
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var initials = searchStockTbox.Text;
+            var stock = stockViewModel.Stocks.FirstOrDefault(s => s.MarketIdentifier.Contains(initials));
 
-            var stock = from stocks in stockViewModel.Stocks
-                        select stocks.MarketIdentifier;
+            ChangePercentageLabel.Content = stock.ChangePercentage.ToString("##.##");
+            VolumeLabel.Content = stock.Volume;
+            UpdatedLastLbl.Content = stock.UpdatedLast.Date;
 
-            if (stock.Contains(initials))
-            {
-                MessageBox.Show("Found a stock");
-            } 
-            else
-            {
-                MessageBox.Show("Could not find stock identifier");
-            }
+            this.SetGrowthStatuses(stock);
 
         }
+
+        private void SetGrowthStatuses(Stock stock)
+        {
+            DailyChangeLbl.Content = stock.DailyGrowth.ToString("##.##");
+            MontlyChangeLbl.Content = stock.MonthlyGrowth.ToString("##.##");
+            YearlyChangeLbl.Content = stock.YearlyGrowth.ToString("##.##");
+
+            if (stock.DailyGrowth > 0.00)
+            {
+                DailyGrowthStatusLbl.Content = "INC";
+                DailyGrowthStatusLbl.Background = Brushes.Green;
+            }
+            else
+            {
+                DailyGrowthStatusLbl.Content = "DEC";
+                DailyGrowthStatusLbl.Background = Brushes.Red;
+            }
+
+            if (stock.MonthlyGrowth > 0.00)
+            {
+                MonthlyGrowthStatusLbl.Content = "INC";
+                MonthlyGrowthStatusLbl.Background = Brushes.Green;
+            }
+            else
+            {
+                MonthlyGrowthStatusLbl.Content = "DEC";
+                MonthlyGrowthStatusLbl.Background = Brushes.Red;
+            }
+
+            if (stock.YearlyGrowth > 0.00)
+            {
+                YearlyGrowthStatusLbl.Content = "INC";
+                YearlyGrowthStatusLbl.Background = Brushes.Green;
+            }
+            else
+            {
+                YearlyGrowthStatusLbl.Content = "DEC";
+                YearlyGrowthStatusLbl.Background = Brushes.Red;
+            }
+        }
+
     }
 }
